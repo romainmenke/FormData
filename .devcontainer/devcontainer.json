@@ -1,0 +1,12 @@
+{
+	"name": "Node.js LTS",
+	"dockerFile": "Dockerfile",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"extensions": [],
+	"postCreateCommand": "npm install",
+	"remoteEnv": {
+		"CHROME_HEADLESS_NO_SANDBOX": "true"
+	}
+}

@@ -6,7 +6,10 @@
   "scripts": {
     "build": "node build",
     "prepare": "npm run build && npm run test",
-    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
+    "test": "npm run test-native && npm run test-polyfill && npm run test-polyfill-sfct",
+    "test-native": "karma start --single-run --browsers ChromeHeadlessMaybeSandbox karma.conf.js",
+    "test-polyfill": "POLYFILL=true karma start --single-run --browsers ChromeHeadlessMaybeSandbox karma.conf.js",
+    "test-polyfill-sfct": "POLYFILL=true SIMULATE=FILE_CONSTRUCTOR_THROW karma start --single-run --browsers ChromeHeadlessMaybeSandbox karma.conf.js"
   },
   "repository": {
     "type": "git",

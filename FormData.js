@@ -387,6 +387,13 @@ if (typeof Blob !== 'undefined' && (typeof FormData === 'undefined' || !FormData
     }
   }
 
+  Object.defineProperty(FormDataPolyfill, 'name', {
+    configurable: true,
+    enumerable: false,
+    writable: false,
+    value: 'FormData'
+  });
+
   if (_match && !_match.matches) {
     _match.matches =
       _match.matchesSelector ||
@@ -452,5 +459,5 @@ if (typeof Blob !== 'undefined' && (typeof FormData === 'undefined' || !FormData
     }
   }
 
-  global['FormData'] = FormDataPolyfill
+  global['FormData'] = FormDataPolyfill;
 }
